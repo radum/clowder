@@ -1,0 +1,16 @@
+$icon-font-path: '../fonts/bootstrap/';
+$roboto-font-path: "../fonts/materialize/roboto/";
+$icons-font-path: "../fonts/materialize/material-design-icons/";
+
+// @import 'bootstrap-sass/bootstrap';
+@import 'materialize/materialize';
+
+@import 'variables';
+@import 'header';
+
+.demo {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 200px;
+}

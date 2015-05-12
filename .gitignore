@@ -1,0 +1,18 @@
+.DS_Store
+.swp
+build
+dist
+node_modules
+coverage
+npm-debug.log
+
+# Signing Identity
+identity*
+
+# Cache
+cache
+tmp
+
+# Tests
+.test
+settings.json

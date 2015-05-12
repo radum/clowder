@@ -1,0 +1,99 @@
+.header {
+    // position: absolute;
+    min-width: 100%;
+    min-height: 40px;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+
+    border-bottom: 1px solid $traffic-light-gray-border;
+    background: #F4F5F7;
+
+    &.no-drag {
+        -webkit-app-region: no-drag;
+    }
+
+    .logo {
+        position: relative;
+        float: right;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+
+    .buttons {
+        display: inline-block;
+        position: relative;
+        top: 10px;
+        left: 15px;
+        z-index: 1000;
+
+        &:hover {
+            .button-minimize.enabled {
+                background-image: url('../images/minimize.png');
+                background-size: 10px 10px;
+            }
+
+            .button-close.enabled {
+                background-image: url('../images/close.png');
+                background-size: 10px 10px;
+            }
+
+            .button-fullscreen.enabled {
+                background-image: url('../images/fullscreen.png');
+                background-size: 10px 10px;
+            }
+
+            .button-fullscreenclose.enabled {
+                background-image: url('../images/fullscreenclose.png');
+                background-size: 10px 10px;
+            }
+        }
+
+        .button {
+            box-sizing: border-box;
+            display: inline-block;
+            background: white;
+            margin-right: 9px;
+            height: 12px;
+            width: 12px;
+            border: 1px solid $traffic-light-gray-border;
+            border-radius: 6px;
+            box-shadow: 0 1px 1px 0 rgba(234, 234, 234, 0.5);
+            -webkit-app-region: no-drag;
+
+            &.enabled:hover {
+                box-shadow: 0 1px 1px 0 rgba(195, 198, 201, 0.5);
+            }
+
+            &.enabled:hover:active {
+                cursor: default;
+                -webkit-filter: brightness(92%);
+            }
+
+            &.button-close {
+                background-color: $traffic-light-red;
+                border-color: $traffic-light-red-border;
+            }
+
+            &.button-minimize {
+                background-color: $traffic-light-yellow;
+                border-color: $traffic-light-yellow-border;
+            }
+
+            &.button-fullscreen {
+                background-color: $traffic-light-green;
+                border-color: $traffic-light-green-border;
+            }
+
+            &.button-fullscreenclose {
+                background-color: $traffic-light-green;
+                border-color: $traffic-light-green-border;
+            }
+
+            &.disabled {
+                background-color: $traffic-light-gray;
+                border-color: $traffic-light-gray-border;
+            }
+        }
+    }
+}
