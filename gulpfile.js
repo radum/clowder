@@ -84,6 +84,9 @@ gulp.task('styles', function() {
 });
 
 gulp.task('clean', require('del').bind(null, ['build']));
+gulp.task('clean-cache', function(done) {
+    return $.cache.clearAll(done);
+});
 
 gulp.task('build', ['download', 'copy', 'js', 'images', 'styles'], function() {
     gulp.watch('app/index.html', ['copy']);

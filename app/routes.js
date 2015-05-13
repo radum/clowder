@@ -3,7 +3,7 @@
 var React = require('react/addons');
 var Header = require('./components/Header.jsx');
 var About = require('./components/About.jsx');
-var Acteleron = require('./components/Acteleron.jsx');
+var Clowder = require('./components/Clowder.jsx');
 var Router = require('react-router');
 
 var Route = Router.Route;
@@ -24,7 +24,7 @@ var App = React.createClass({
 var routes = (
     <Route handler={App}>
         <Route name="about" path="about" handler={About}/>
-        <DefaultRoute name="acteleron" handler={Acteleron}/>
+        <DefaultRoute name="acteleron" handler={Clowder}/>
     </Route>
 );
 

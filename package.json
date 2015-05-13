@@ -1,6 +1,6 @@
 {
-  "name": "acteleron",
-  "productName": "Acteleron",
+  "name": "clowder",
+  "productName": "Clowder",
   "version": "0.0.0",
   "author": "RaduM",
   "description": "React + Electron boilerplate",
@@ -8,13 +8,13 @@
   "main": "electron.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:radum/acteleron.git"
+    "url": "git@github.com:radum/clowder.git"
   },
-  "bugs": "https://github.com/radum/acteleron/issues",
+  "bugs": "https://github.com/radum/clowder/issues",
   "scripts": {
     "start": "gulp",
-    "test": "jest",    
-    "release": "electron-packager ./build Acteleron --platform=win32 --arch=x64 --version=0.25.3 --asar",
+    "test": "jest",
+    "release": "electron-packager ./build Clowder --platform=win32 --arch=x64 --version=0.25.3 --asar",
     "lint": "jsxhint src"
   },
   "licenses": [
@@ -52,7 +52,9 @@
     "bluebird": "^2.9.25",
     "classnames": "^2.1.1",
     "coveralls": "^2.11.2",
+    "hammerjs": "^2.0.4",
     "jquery": "^2.1.4",
+    "materialize-css": "^0.96.1",
     "node-uuid": "^1.4.3",
     "object-assign": "^2.0.0",
     "react": "^0.13.3",

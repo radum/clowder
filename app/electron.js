@@ -3,6 +3,8 @@
 var app = require('app');
 var path = require('path');
 var BrowserWindow = require('browser-window');
+var ipc = require('ipc');
+var dialog = require('dialog');
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -46,4 +48,18 @@ app.on('ready', function() {
     mainWindow.openDevTools();
 
     // BrowserWindow.addDevToolsExtension('./devtools/react-devtools');
+});
+
+ipc.on('application:open-file', function(event, arg) {
+    var parentWindow;
+
+    if (process.platform === 'darwin') {
+        parentWindow = null;
+    } else {
+        parentWindow = BrowserWindow.getFocusedWindow();
+    }
+
+    dialog.showOpenDialog(parentWindow, { properties: ['openFile']}, function(filenames) {
+        event.sender.send('application:open-file-reply', filenames[0]);
+    });
 });
