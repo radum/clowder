@@ -1,26 +1,31 @@
 'use strict';
 
 var ipc = require('ipc');
+var remote = require('remote');
+var dialog = remote.require('dialog');
 
 var React = require('react/addons');
 var Router = require('react-router');
-var { Route, RouteHandler, Link } = Router;
 
 var Clowder = React.createClass({
     contextTypes: {
         router: React.PropTypes.func
     },
+    mixins: [Router.Navigation],
     componentDidMount: function () {
         ipc.on('application:open-file-reply', function(filename) {
             console.log(filename);
         });
     },
     showFileOpenDialog: function() {
-        ipc.send('application:open-file');
+        // no need for thse anymore
+        // ipc.send('application:open-file');
 
-        // ipc.send('application:open-file', function(files) {
-        //     console.log('files');
-        // });
+        var _this = this;
+        dialog.showOpenDialog({properties: ['openFile']}, function(filename) {
+            console.log(filename);
+            _this.transitionTo('wordCloudDataValidator', {filename});
+        });
     },
     render: function () {
         return (
