@@ -12,7 +12,7 @@ var Clowder = React.createClass({
         router: React.PropTypes.func
     },
     mixins: [Router.Navigation],
-    componentDidMount: function () {
+    componentDidMount: function() {
         ipc.on('application:open-file-reply', function(filename) {
             console.log(filename);
         });
@@ -22,12 +22,13 @@ var Clowder = React.createClass({
         // ipc.send('application:open-file');
 
         var _this = this;
+
         dialog.showOpenDialog({properties: ['openFile']}, function(filename) {
             console.log(filename);
-            _this.transitionTo('wordCloudDataValidator', {filename});
+            _this.transitionTo('wordCloud', {file: filename});
         });
     },
-    render: function () {
+    render: function() {
         return (
             <div className="container">
                 <div className="row">

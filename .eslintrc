@@ -11,7 +11,8 @@
         "Modernizr": true
     },
     "ecmaFeatures": {
-        "modules": true
+        "modules": true,
+        "jsx": true
     },
     "rules": {
         "no-comma-dangle": 2,
